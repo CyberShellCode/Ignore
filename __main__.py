@@ -158,7 +158,11 @@ def run_ctf_mode(args):
     if args.output:
         save_ctf_report(result, args.output)
     else:
-        save_ctf_report(result, f"ctf_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+        # Use timezone-aware timestamp in filename
+        save_ctf_report(
+            result,
+            f"ctf_report_{datetime.now().astimezone().strftime('%Y%m%d_%H%M%S%z')}.json"
+        )
     
     return result
 
