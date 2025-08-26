@@ -549,7 +549,7 @@ def main():
             args.target = sys.argv[1]
             # Re-parse with defaults
             remaining_args = sys.argv[2:] if len(sys.argv) > 2 else []
-            args = exploit_parser.parse_args([sys.argv[1]] + remaining_args)
+            args = exploit_parser.parse_args([sys.argv[1], *remaining_args])
             args.mode = 'exploit'
         else:
             print("\nUsage examples:")
