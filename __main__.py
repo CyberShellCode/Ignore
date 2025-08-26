@@ -386,7 +386,7 @@ def run_standard_mode(args):
             output_path.write_text(result.get('report', ''))
             print(f"\n[+] Report saved to {output_path}")
         else:  # json
-            with open(output_path, 'w') as f:
+            with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(result, f, indent=2, default=str)
             print(f"\n[+] JSON results saved to {output_path}")
     else:
