@@ -25,12 +25,11 @@ if __name__ == "__main__" and __package__ is None:
 else:
     from .orchestrator import CyberShell
     from .config import SafetyConfig
-    from .agent import BountyConfig, AutonomousBountyHunter
+    from .agent import BountyConfig
     from .llm_connectors import (
         OllamaConnector,
         OpenAIChatConnector,
         LocalFunctionConnector,
-        OpenAICompatibleHTTPConnector
     )
 
 def print_banner():
