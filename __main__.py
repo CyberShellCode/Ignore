@@ -5,13 +5,17 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-# Fix for direct execution
 if __name__ == "__main__" and __package__ is None:
-    # Add parent directory to path for direct execution
-    sys.path.insert(0, str(Path(__file__).parent.parent))
-    from cybershell.orchestrator import CyberShell
-    from cybershell.config import SafetyConfig
-    from cybershell.agent import BountyConfig, AutonomousBountyHunter
+    # Ensure package imports work when executed directly
+    try:
+        from cybershell.orchestrator import CyberShell
+        from cybershell.config import SafetyConfig
+        from cybershell.agent import BountyConfig
+    except ModuleNotFoundError:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        from cybershell.orchestrator import CyberShell
+        from cybershell.config import SafetyConfig
+        from cybershell.agent import BountyConfig
     from cybershell.llm_connectors import (
         OllamaConnector,
         OpenAIChatConnector,
