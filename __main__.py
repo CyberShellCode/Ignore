@@ -596,7 +596,10 @@ def main() -> None:
     except KeyboardInterrupt:
         print("\n[!] Interrupted by user")
         sys.exit(130)
-    except Exception as e:
+    except KeyboardInterrupt:
+        print("\n[!] Interrupted by user")
+        sys.exit(130)
+    except (RuntimeError, ValueError, AttributeError, ImportError) as e:
         print(f"\n[!] Error: {e}")
         if hasattr(args, 'verbose') and args.verbose:
             import traceback
