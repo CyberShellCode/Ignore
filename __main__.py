@@ -104,67 +104,67 @@ def setup_llm(args, bot: CyberShell):
         print(f"[!] Failed to configure LLM: {e}")
         return None
 
-def run_ctf_mode(args):
-    """Run CTF solving mode with targeted vulnerability testing"""
-    
-    print(f"\n[CTF MODE] Target: {args.target}")
-    
-    # Configure for CTF (always aggressive)
-    config = SafetyConfig(
-        allow_localhost=True,
-        allow_private_ranges=True,
-        additional_scope_hosts=[],
-        require_manual_approval=False
-    )
-    
-    # Initialize CyberShell with CTF settings
-    bot = CyberShell(
-        config=config,
-        doc_root=args.doc_root,
-        planner_name='aggressive',  # Always aggressive for CTF
-        scorer_name='weighted_signal',
-        user_plugins_dir=args.plugins_dir
-    )
-    
-    # Setup LLM
-    setup_llm(args, bot)
-    
-    # Check if specific vulnerability was specified
-    if args.vuln_type:
-        print(f"[*] Targeting specific vulnerability: {args.vuln_type.upper()}")
-        result = run_targeted_ctf_test(bot, args.target, args.vuln_type)
-    else:
-        print("[*] Running full CTF exploitation scan")
-        # Configure for CTF hunting
-        ctf_config = BountyConfig(
-            target_domain=args.target,
-            scope=[args.target],
-            aggressive_mode=True,
-            chain_vulnerabilities=True,
-            extract_data_samples=True,
-            auto_generate_reports=True,
-            max_parallel_exploits=10,
-            min_cvss_for_exploit=0.0,  # Exploit everything in CTF
-            confidence_threshold=0.2    # Low threshold for CTF
-        )
-        
-        # Run autonomous hunt
-        result = bot.hunt_autonomous(args.target, ctf_config)
-    
-    # Extract and display flag
-    extract_ctf_flag(result)
-    
-    # Save CTF report
-    if args.output:
-        save_ctf_report(result, args.output)
-    else:
-        # Use timezone-aware timestamp in filename
-        save_ctf_report(
-            result,
-            f"ctf_report_{datetime.now().astimezone().strftime('%Y%m%d_%H%M%S%z')}.json"
-        )
-    
-    return result
+def run_ctf_mode(args: argparse.Namespace) -> dict:
+     """Run CTF solving mode with targeted vulnerability testing"""
+     
+     print(f"\n[CTF MODE] Target: {args.target}")
+     
+     # Configure for CTF (always aggressive)
+     config = SafetyConfig(
+         allow_localhost=True,
+         allow_private_ranges=True,
+         additional_scope_hosts=[],
+         require_manual_approval=False
+     )
+     
+     # Initialize CyberShell with CTF settings
+     bot = CyberShell(
+         config=config,
+         doc_root=args.doc_root,
+         planner_name='aggressive',  # Always aggressive for CTF
+         scorer_name='weighted_signal',
+         user_plugins_dir=args.plugins_dir
+     )
+     
+     # Setup LLM
+     setup_llm(args, bot)
+     
+     # Check if specific vulnerability was specified
+     if args.vuln_type:
+         print(f"[*] Targeting specific vulnerability: {args.vuln_type.upper()}")
+         result = run_targeted_ctf_test(bot, args.target, args.vuln_type)
+     else:
+         print("[*] Running full CTF exploitation scan")
+         # Configure for CTF hunting
+         ctf_config = BountyConfig(
+             target_domain=args.target,
+             scope=[args.target],
+             aggressive_mode=True,
+             chain_vulnerabilities=True,
+             extract_data_samples=True,
+             auto_generate_reports=True,
+             max_parallel_exploits=10,
+             min_cvss_for_exploit=0.0,  # Exploit everything in CTF
+             confidence_threshold=0.2    # Low threshold for CTF
+         )
+         
+         # Run autonomous hunt
+         result = bot.hunt_autonomous(args.target, ctf_config)
+     
+     # Extract and display flag
+     extract_ctf_flag(result)
+     
+     # Save CTF report
+     if args.output:
+         save_ctf_report(result, args.output)
+     else:
+         # Use timezone-aware timestamp in filename
+         save_ctf_report(
+             result,
+             f"ctf_report_{datetime.now().astimezone().strftime('%Y%m%d_%H%M%S%z')}.json"
+         )
+     
+     return result
 
 def run_targeted_ctf_test(bot: CyberShell, target: str, vuln_type: str):
     """Run targeted vulnerability test for CTF"""
