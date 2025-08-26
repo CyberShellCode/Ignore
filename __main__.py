@@ -392,7 +392,7 @@ def run_standard_mode(args):
     else:
         print("\n" + result.get('report', ''))
 
-def run_autonomous_mode(args):
+def run_autonomous_mode(args: argparse.Namespace) -> None:
     """Run fully autonomous bug bounty hunting mode"""
     
     print("[*] Initializing Autonomous Bug Bounty Hunter")
