@@ -464,7 +464,7 @@ def run_autonomous_mode(args: argparse.Namespace) -> None:
             json.dump(result, f, indent=2, default=str)
         print(f"\n[+] Results saved to {output_path}")
 
-def main():
+def main() -> None:
     """Main entry point"""
 
     print_banner()
