@@ -1,0 +1,27 @@
+safety:
+  allow_localhost: true
+  allow_private_ranges: true
+  additional_scope_hosts: []
+
+exploitation:
+  max_parallel_exploits: 5
+  min_cvss_for_exploit: 4.0
+  confidence_threshold: 0.7
+  chain_vulnerabilities: true
+  extract_data_samples: true
+
+llm:
+  provider: "ollama"
+  model: "dolphin-mixtral:8x7b"
+  temperature: 0.7
+  max_tokens: 2000
+
+learning:
+  enable_continuous_learning: true
+  model_update_threshold: 100
+  experience_buffer_size: 10000
+  
+rate_limiting:
+  requests_per_second: 5.0
+  burst_size: 10
+  adaptive_mode: true
